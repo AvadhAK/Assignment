@@ -27,7 +27,7 @@ def train_model():
 
     # Save the model
     parent_dir = os.path.dirname(os.getcwd())  # Get the parent directory
-    model_path = os.path.join(parent_dir+"Project/", "model.pkl")
+    model_path = os.path.join(parent_dir+"/Project/", "model.pkl")
 
     # Save the model
     with open(model_path, "wb") as f:
