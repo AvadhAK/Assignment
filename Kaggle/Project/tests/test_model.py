@@ -5,7 +5,7 @@
 
 
 import numpy as np
-# from src.predict import load_model_and_predict
+from src.predictions import load_model_and_predict
 
 def test_predict():
     # Test prediction functionality
