@@ -1,4 +1,5 @@
 import pickle
+import os
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
@@ -25,9 +26,13 @@ def train_model():
     print(f"Model Accuracy: {accuracy:.2f}")
 
     # Save the model
-    with open("model.pkl", "wb") as f:
+    parent_dir = os.path.dirname(os.getcwd())  # Get the parent directory
+    model_path = os.path.join(parent_dir, "model.pkl")
+
+    # Save the model
+    with open(model_path, "wb") as f:
         pickle.dump(model, f)
-    print("Model saved as model.pkl")
+    print("Model saved as {model_path}")
 
 
 if __name__ == "__main__":

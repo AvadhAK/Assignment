@@ -1,10 +1,14 @@
 import pickle
 import numpy as np
+import os
 
 
 def load_model_and_predict(sample_data):
     # Load the saved model
-    with open("src/model.pkl", "rb") as f:
+    parent_dir = os.path.dirname(os.getcwd())  # Get the parent directory
+    model_path = os.path.join(parent_dir, "model.pkl")
+
+    with open(model_path, "rb") as f:
         model = pickle.load(f)
     # Predict using the model
     prediction = model.predict(sample_data)
