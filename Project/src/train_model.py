@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
 
+
 def train_model():
     # Load the dataset
     iris = load_iris()
@@ -27,5 +28,7 @@ def train_model():
         pickle.dump(model, f)
     print("Model saved as model.pkl")
 
+
 if __name__ == "__main__":
     train_model()
+    

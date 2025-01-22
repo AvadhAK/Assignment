@@ -1,6 +1,7 @@
 import pickle
 import numpy as np
 
+
 def load_model_and_predict(sample_data):
     # Load the saved model
     with open("model.pkl", "rb") as f:
@@ -8,6 +9,7 @@ def load_model_and_predict(sample_data):
     # Predict using the model
     prediction = model.predict(sample_data)
     return prediction
+
 
 if __name__ == "__main__":
     # Sample data for prediction (first row of Iris dataset)
