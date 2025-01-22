@@ -58,5 +58,9 @@ jobs:
         run: |
           export PYTHONPATH=$PYTHONPATH:${{ github.workspace }}/Project
 
+
+      - name: List Repository Files
+        run: ls -R
+
       - name: Run tests
         run: pytest Project/tests/
