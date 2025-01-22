@@ -1,19 +1,9 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 import os
 import pickle
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
-
-
-# In[2]:
-
 
 def train_model():
     # Load the dataset
@@ -37,10 +27,5 @@ def train_model():
         pickle.dump(model, f)
     print("Model saved as model.pkl")
 
-
-# In[3]:
-
-
 if __name__ == "__main__":
     train_model()
-
