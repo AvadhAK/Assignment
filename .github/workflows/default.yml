@@ -43,7 +43,7 @@ jobs:
       - name: Copy Files to Build Directory
         run: |
           mkdir -p build  # Create the target directory if it doesn't exist
-          cp -r . build/  # Copy all files and directories to the "build" directory
+          rsync -av --exclude=build . build/  # Use rsync to exclude the build directory
 
       # Step 4: Verify the copied files (optional)
       - name: List Copied Files
