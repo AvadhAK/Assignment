@@ -4,7 +4,7 @@ import os
 
 # Load the saved model from the parent directory
 parent_dir = os.path.dirname(os.getcwd())  # Get the parent directory
-model_path = os.path.join(parent_dir+"/Assignment/Project/", "model.pkl")
+model_path = os.path.join(parent_dir, "Assignment", "Project", "model.pkl")
 
 with open(model_path, "rb") as f:
     model = pickle.load(f)
