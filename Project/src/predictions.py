@@ -4,7 +4,7 @@ import numpy as np
 
 def load_model_and_predict(sample_data):
     # Load the saved model
-    with open("model.pkl", "rb") as f:
+    with open("src/model.pkl", "rb") as f:
         model = pickle.load(f)
     # Predict using the model
     prediction = model.predict(sample_data)
