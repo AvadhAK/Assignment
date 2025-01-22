@@ -36,7 +36,7 @@ jobs:
         run: ls -R
 
       - name: Run linter
-        run: flake8 Kaggle/Project/src/
+        run: flake8 Project/src/
 
   test:
     runs-on: ubuntu-latest
@@ -52,7 +52,7 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r Kaggle/Project/requirements.txt
+          pip install -r Project/requirements.txt
           
       - name: Run tests
-        run: pytest Kaggle/Project/tests/
+        run: pytest Project/tests/
