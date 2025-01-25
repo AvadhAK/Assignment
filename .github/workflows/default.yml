@@ -69,11 +69,11 @@ jobs:
     needs: [lint, test]  # Make deploy dependent on lint and test
 
     steps:
-      # Checkout code
+      # Step 1: Checkout code
       - name: Checkout code
         uses: actions/checkout@v4
       
-      # Step 3: Install dependencies
+      # Step 2: Install dependencies
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
@@ -86,7 +86,12 @@ jobs:
           set MLFLOW_TRACKING_URI=http://127.0.0.1:5000
           echo MLflow tracking URI is set to %MLFLOW_TRACKING_URI%
 
-    # Step 5: Log and Register Model in MLflow
+    # Step 3: Log and Register Model in MLflow
       - name: Log and Register Model
         run: |
           python deploy/log_and_register_model.py
+
+    # Step 4: Log and Register Model in MLflow
+      - name: Log and Register Model
+        run: |
+          python deploy/infer.py
