@@ -88,25 +88,5 @@ jobs:
 
     # Step 5: Log and Register Model in MLflow
       - name: Log and Register Model
-        shell: cmd
         run: |
-          python -c " 
-          import mlflow
-          from mlflow.tracking import MlflowClient
-
-          # Set tracking URI
-          mlflow.set_tracking_uri('$MLFLOW_TRACKING_URI')
-
-          # Define experiment name
-          experiment_name = 'my-experiment'
-          mlflow.set_experiment(experiment_name)
-
-          # Log model
-          with mlflow.start_run(run_name='model-deployment-run') as run:
-              # Log artifact (model.pkl)
-              mlflow.log_artifact('model.pkl', artifact_path='model_artifacts')
-
-              # Register model
-              model_uri = f'runs:/{run.info.run_id}/model_artifacts/model.pkl'
-              mlflow.register_model(model_uri, 'my-registered-model')
-          print('Model registered successfully!')"
+          python deploy/log_and_register_model.py
