@@ -80,20 +80,17 @@ jobs:
           pip install mlflow
 
       - name: Set MLflow Tracking URI
-        shell: pwsh
+        shell: cmd
         run: |
-          Write-Host "Setting MLflow tracking URI to local server"
-          $env:MLFLOW_TRACKING_URI = "http://127.0.0.1:5000"
-          Write-Host "MLflow tracking URI is set to $env:MLFLOW_TRACKING_URI"
-        
+          echo Setting MLflow tracking URI to local server
+          set MLFLOW_TRACKING_URI=http://127.0.0.1:5000
+          echo MLflow tracking URI is set to %MLFLOW_TRACKING_URI%
 
-      # Step 5: Register the model in MLflow
-      - name: Register Model in MLflow
-        env:
-          MLFLOW_TRACKING_URI: http://127.0.0.1:5000
+    # Step 5: Log and Register Model in MLflow
+      - name: Log and Register Model
+        shell: cmd
         run: |
-          echo "Logging and registering model to MLflow"
-          python - <<EOF
+          python -c " 
           import mlflow
           from mlflow.tracking import MlflowClient
 
@@ -112,5 +109,4 @@ jobs:
               # Register model
               model_uri = f'runs:/{run.info.run_id}/model_artifacts/model.pkl'
               mlflow.register_model(model_uri, 'my-registered-model')
-          print('Model registered successfully!')
-          EOF
+          print('Model registered successfully!')"
