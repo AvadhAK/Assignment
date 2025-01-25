@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1737827626150
+current_stage: None
+description: null
+last_updated_timestamp: 1737827626150
+name: my-registered-modeL23
+run_id: 2aeff2e036f844b9b1a3e9e9d6008029
+run_link: null
+source: file:///C:/VSCode/Assignment/mlruns/506264222853236944/2aeff2e036f844b9b1a3e9e9d6008029/artifacts/model_artifacts/model.pkl
+status: READY
+status_message: null
+storage_location: file:///C:/VSCode/Assignment/mlruns/506264222853236944/2aeff2e036f844b9b1a3e9e9d6008029/artifacts/model_artifacts/model.pkl
+user_id: null
+version: 2
