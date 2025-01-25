@@ -83,7 +83,7 @@ jobs:
         shell: cmd
         run: |
           echo Setting MLflow tracking URI to local server
-          set MLFLOW_TRACKING_URI=http://127.0.0.1:5000
+          set MLFLOW_TRACKING_URI=http://0.0.0.0:5000
           echo MLflow tracking URI is set to %MLFLOW_TRACKING_URI%
 
     # Step 3: Log and Register Model in MLflow
