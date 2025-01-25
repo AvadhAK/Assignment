@@ -111,4 +111,4 @@ jobs:
               model_uri = f'runs:/{run.info.run_id}/model_artifacts/model.pkl'
               mlflow.register_model(model_uri, 'my-registered-model')
           print('Model registered successfully!')
-EOF
+          EOF
