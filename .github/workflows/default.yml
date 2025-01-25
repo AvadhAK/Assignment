@@ -79,11 +79,13 @@ jobs:
           python -m pip install --upgrade pip
           pip install mlflow
 
-      # Step 4: Log MLflow Tracking URI
       - name: Set MLflow Tracking URI
+        shell: pwsh
         run: |
-          echo "Setting MLflow tracking URI to local server"
-          export MLFLOW_TRACKING_URI="http://127.0.0.1:5000"
+          Write-Host "Setting MLflow tracking URI to local server"
+          $env:MLFLOW_TRACKING_URI = "http://127.0.0.1:5000"
+          Write-Host "MLflow tracking URI is set to $env:MLFLOW_TRACKING_URI"
+        
 
       # Step 5: Register the model in MLflow
       - name: Register Model in MLflow
