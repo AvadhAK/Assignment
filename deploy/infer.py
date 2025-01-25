@@ -2,6 +2,8 @@ import mlflow
 import numpy as np
 
 # Load the model from the local MLflow server using the model name or ID
+mlflow.set_tracking_uri("http://127.0.0.1:5000")
+
 # For a registered model, specify the name of the model in the format: 'models:/<model_name>/<version>'
 model_name = "my-registered-model1"
 model_version = "latest"  # Or use 'latest' to load the latest version of the model

@@ -92,6 +92,6 @@ jobs:
           python deploy/log_and_register_model.py
 
     # Step 4: Log and Register Model in MLflow
-      - name: Log and Register Model
+      - name: Infer Model from MLFlow registry on machine
         run: |
           python deploy/infer.py
