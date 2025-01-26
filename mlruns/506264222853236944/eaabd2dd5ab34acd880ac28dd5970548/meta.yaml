@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/VSCode/Assignment/mlruns/506264222853236944/eaabd2dd5ab34acd880ac28dd5970548/artifacts
+end_time: 1737831725861
+entry_point_name: ''
+experiment_id: '506264222853236944'
+lifecycle_stage: active
+run_id: eaabd2dd5ab34acd880ac28dd5970548
+run_name: model-deployment-run23
+run_uuid: eaabd2dd5ab34acd880ac28dd5970548
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1737831713807
+status: 3
+tags: []
+user_id: avadhkishore
